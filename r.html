@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>AdminPanel</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style type="text/css">
+		*{
+			padding: 0;
+			list-style: none;
+			margin:0;
+			font-family: 'Roboto', sans-serif;
+		}
+		.back{
+			height:657px;
+			position: relative;
+			background: -webkit-linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)), url("back.png");
+			background-repeat:no-repeat;
+			background-size:100%;
+			-webkit-background-size:100%
+		}
+		.sign_in{
+	    	
+	    	position: absolute;
+	    	background-color: rgba(0,0,0,0.82);
+	    	height:225px;
+	    	width:400px;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-top: -112.5px;
+	    	margin-left: -200px;
+	    }
+	    .inner_sign_in{ 
+	  		position: absolute;
+	    	height: 225px;
+	    	width:300px;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-top: -112.5px;
+	    	margin-left: -150px;
+	    }
+	    .entry{	
+	    	font-size: 13.7px;
+	    	margin-left: 25px;
+	    	margin-top: 30px;
+	    	height: 28px;
+	    	width:250px;
+	    }
+	    .signup_button{
+	    	margin-top: 26px;
+	    	margin-left: 58px;
+	    	background-color: yellow;
+	    	font-size: 18px;
+	    	border-radius: 50px;
+	    	height: 50px;
+	    	width: 180px;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;	
+	    }
+	     .signup_button:hover{
+	        background-color:#242424;
+	    	color:white;
+	    	transition: 0.15s;
+	    	outline: none;	
+	    }
+	    .admintext{
+	    	height:214px;
+	    	width:400px;
+	    	margin:0 auto;
+	    }
+	    .logo{
+	    	margin: 0 auto;
+			top: 10px;
+			left: 15px;
+			height:170px;
+			width:170px;
+			z-index: 2;
+			cursor: pointer;
+	    }
+	    .ADMINISTRATOR{
+	    	color:white;
+	    	height:50px;
+	    	width:400px;
+	    	text-align: center;
+	    	padding-bottom: 0px;
+	    	margin:0 auto;
+	    	position: absolute;
+	    }
+	    .adminpanel{
+	    	display:none;
+	    	height:680px;
+	    	background-color: #242424;
+	    }
+	    .adminpanelheader{
+	    	height: 100px;
+	    	position: relative;
+	    	text-align: center;
+	    	font-size: 230%;
+	    }
+	    .addnew{
+	    	position: absolute;
+	    	width:32.21%;
+	    	height:80%;
+	    	background-color: yellow;
+	    	bottom: 23px;
+	    	left:0.73%;
+	    	cursor: pointer;
+	    }
+	    .update{
+	    	position: absolute;
+	    	width:32.21%;
+	    	height:80%;
+	    	background-color: yellow;
+	    	bottom: 23px;
+	    	left:33.89%;
+	    	right:33.89%;
+	    	cursor: pointer;
+	    }
+	    .delete{
+	    	position: absolute;
+	    	width:32.21%;
+	    	height:80%;
+	    	background-color: yellow;
+	    	bottom: 23px;
+	   		right:0.73%;
+	    	cursor: pointer;
+	    }
+	    .logo2{
+			height:130px;
+			width:130px;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			margin-left: -65px;
+			margin-top:-65px; 
+	    }
+	    .logoutbutton{
+	    	position: absolute;
+	    	background-color: yellow;
+	    	top:25%;
+	 		right: 20px;   
+	    	font-size: 99%;
+	    	border-radius: 50px;
+	    	height:50%;
+	    	width: 10%;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;
+	    }
+	    .adminfooter{
+	    	position: relative;
+	    	height: 400px;
+	    }
+	    .edittingform{
+	    	height:300px;
+	    	width:800px;
+	    	position: absolute;
+	    	top:50%;
+	    	left:50%;
+	    	margin-left:-400px;
+	    	margin-top:-150px;
+	    }
+		.entryform{
+			height:100px;
+			width:400px;
+			margin:0 auto;
+			font-size:18px; 
+			color:white;
+		}	    	
+		.addbutton{
+			position: absolute;
+	    	background-color: yellow;
+	    	top:80%;
+	    	left:50%;
+	    	margin-left: -14%;
+	    	margin-top: -9%;	 		   
+	    	font-size: 150%;
+	    	border-radius: 50px;
+	    	height:18%;
+	    	width: 28%;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;
+		}
+		.updatebutton{
+			display: none;
+			position: absolute;
+	    	background-color: yellow;
+	    	top:80%;
+	    	left:50%;
+	    	margin-left: -14%;
+	    	margin-top: -9%;	 		   
+	    	font-size: 150%;
+	    	border-radius: 50px;
+	    	height:18%;
+	    	width: 28%;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;
+		}
+		.deletebutton{
+			display: none;
+			position: absolute;
+	    	background-color: yellow;
+	    	top:80%;
+	    	left:50%;
+	    	margin-left: -14%;
+	    	margin-top: -9%;	 		   
+	    	font-size: 150%;
+	    	border-radius: 50px;
+	    	height:18%;
+	    	width: 28%;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;
+		}
+		.triangle-down {
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-left: 35px solid transparent;
+			border-right: 35px solid transparent;
+			border-top: 23px solid yellow;
+			bottom:0px;
+			left:13%;  13 47.5 80.5
+		}
+		.logoutbutton:hover{
+			color:white;
+			background-color: black;
+			transition: 0.25s;
+		}
+		.update:hover{
+			font-size:30px;
+			transition: .2s;
+		}
+		.delete:hover{
+			font-size:30px;
+			transition: .2s;
+		}
+		.addnew:hover{
+			font-size:30px;
+			transition: .2s;
+		}
+		.addbutton:hover{
+			color:white;
+			background-color: black;
+			transition: 0.25s;
+		}
+		.deletebutton:hover{
+			color:white;
+			background-color: black;
+			transition: 0.25s;
+		}
+		.updatebutton:hover{
+			color:white;
+			background-color: black;
+			transition: 0.25s;
+		}
+	</style>
+</head>
+<body>
+	<div class="back w3-animate-left">
+		<div class="admintext">
+			<div class="logo">
+				<img class="logo" src="logo.png" alt="logo">
+			</div>
+			<div class="ADMINISTRATOR">
+				<p style="font-size:40px; font-weight:600;">Administrator Panel</p>
+			</div>
+		</div>
+		<div class="sign_in" id="sign_in">
+			<!--i class="fas fa-angle-double-left" id="back_button2" style="color: #d5d5d5; font-size: 30px ;cursor:pointer;"></i-->
+			<div class="inner_sign_in">
+				<input class="entry" type="text" name="username" placeholder="E-mail/Username"/><br>	
+				<input class="entry" type="password" name="password" placeholder="Password"/><br>
+				<button class="signup_button" id="signin_button">Sign In</button>
+			</div> 
+		</div>
+	</div>
+	<div class="adminpanel w3-center w3-animate-right">
+		<div style="height: 100px; position: relative;">
+				<img class="logo2" src="logo.png" alt="logo">
+				<button class="logoutbutton">Logout</button>
+		</div>
+		<div class="adminpanelheader">
+			<div class="addnew">
+				<p style="padding-top: 15px">Add New Series</p>
+			</div>	
+			<div class="triangle-down"></div>
+			<div class="update">
+				<p style="padding-top: 15px">Update Existing Series</p>
+			</div>
+			<div class="delete">
+				<p style="padding-top: 15px">Delete a Series</p>
+			</div>
+		</div>
+		<div class="adminfooter">
+			<div class="edittingform" >
+				<div class="entryform">
+				<div style="margin:30px;"><p style="float:left;">Sample Text<p><div style="width:20px; height:25px; float: left;"></div><input type="text" name="Sample Text" placeholder="Sample Entry" style=" height: 25px; width:200px; float: left;"><br>
+				</div>
+				<div style="margin:30px;"><p style="float:left;">Sample Text<p><div style="width:20px; height:25px; float: left;"></div><input type="text" name="Sample Text" placeholder="Sample Entry" style=" height: 25px; width:200px; float: left;"><br>
+				</div>
+				</div>
+				<button class="addbutton">Add</button>
+				<button class="updatebutton">Update</button>
+				<button class="deletebutton" >Delete</button>
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#signin_button').click(function(){
+			$('.back').hide();
+			$('.adminpanel').show();
+		})
+		$('.logoutbutton').click(function(){
+			$('.back').show();
+			$('.adminpanel').hide();	
+		})
+		$('.delete').click(function(){
+			$('.updatebutton').hide();
+			$('.deletebutton').show();
+			$('.addbutton').hide();
+			$('.triangle-down').css('left','80.5%');
+		})
+		$('.update').click(function(){
+			$('.updatebutton').show();
+			$('.deletebutton').hide();
+			$('.addbutton').hide();
+			$('.triangle-down').css('left','47.5%');
+		})
+		$('.deletebutton').click(function(){
+			$('.back').show();
+			$('.adminpanel').hide();	
+		})
+		$('.updatebutton').click(function(){
+			$('.back').show();
+			$('.adminpanel').hide();	
+		})
+		$('.addbutton').click(function(){
+			$('.back').show();
+			$('.adminpanel').hide();	
+		})
+		$('.addnew').click(function(){
+			$('.addbutton').show();
+			$('.updatebutton').hide();
+			$('.deletebutton').hide();
+			$('.triangle-down').css('left','13%');
+		})
+	</script>
+</body>
+</html>

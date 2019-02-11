@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>HomePAGE</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<style type="text/css">
+		*{
+			padding: 0;
+			list-style: none;
+			margin:0;
+			font-family: 'Roboto', sans-serif;
+		}
+		.logo{
+			position: absolute;
+			top: 10px;
+			left: 15px;
+			height:100px;
+			width:100px;
+			z-index: 2;
+			cursor: pointer;
+			transition: 1s;
+		}
+		.logo:hover{
+			height: 125px;
+			width: 125px;
+		}
+		.back{
+			height:657px;
+			position: relative;
+			background: -webkit-linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url("back.png");
+			background-repeat:no-repeat;
+			background-size:100%;
+			-webkit-background-size:100%
+			}
+		.text{
+			display: visible;
+			text-decoration-color: white;
+			text-align: center;
+			background: height: 300px;width: 700px;
+			position: absolute;
+			top:50%;
+			left:50%;
+			margin-top: -150px;
+			margin-left: -350px;
+			font-weight: bolder;
+		}			
+		.button {
+			background-color: yellow;
+	    	font-size: 18px;
+	    	border-radius: 50px;
+	    	height: 50px;
+	    	width: 180px;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;
+	    }
+	    .signup_button{
+	    	margin-top: 26px;
+	    	margin-left: 58px;
+	    	background-color: yellow;
+	    	font-size: 18px;
+	    	border-radius: 50px;
+	    	height: 50px;
+	    	width: 180px;
+	    	cursor: pointer; 
+	    	border:1px solid black;
+	    	outline: none;	
+	    }
+	    .button:hover{
+	    	background-color:black;
+	    	color:white;
+	    	transition: 0.15s;
+	    	outline: none;
+	    }
+	    .signup_button:hover{
+	        background-color:black;
+	    	color:white;
+	    	transition: 0.15s;
+	    	outline: none;	
+	    }
+	    .s{
+	    	display: inline-block;
+	    	width:50px;
+	    }
+	    .box{
+	    	color:#a2a2a2;
+	    	float: left;
+	    	position: relative;
+	    	height:100px;
+	    	width:225px;
+	    	border:1px solid black;
+	    	text-align: center;
+	    }
+	    .pre_footer{
+	    	background-color: #141414;
+	    	height: 110px;
+	    }
+	    .box_father{
+	    	padding-top: 10px;
+	    	margin:0 auto;
+	    	width: 455px;
+	    	height: 102px;
+
+	    }
+	    .box_text{
+	    	padding-top: 28px;
+	    	font-size: 23px;
+	    	text-align: center;
+	    	font-weight: 400;
+	    }
+	    
+	     
+	    .footer{
+	    	position: relative;
+	    	background-color: #242424;
+	    	height: 450px;
+	    }
+	    .fc{
+	    	
+	    	width:70%;
+	    	height:450px;
+	    	margin:0 auto;
+	    }
+	    .footertext{
+	    	position: absolute;
+	    	font-weight:1;
+	    	
+	    	float: left;
+	    	color:#d5d5d5;
+	    	
+	    	width: 45% ;
+	    	height: 400px;
+	    	text-align: left;
+	    	display: visible;
+	    }
+	    .footertext2{
+	    	display: none;
+	    	font-weight:1;
+	    	float: left;
+	    	color:#d5d5d5;
+	    	width: 45%;
+	    	height: 95%;
+	    	text-align: left;
+	    }
+	    .ft{
+	    	position: relative;
+	    	padding-top:125px;
+	    	font-size:40px ;
+	    }
+	    .footericon{
+	    	position: relative;
+	    	
+	    	display: visible;
+	    	float:right;
+	    	opacity: .7;
+	    	height:95%;
+	    	width:40%;
+	    }
+	    .footericon2{
+	    	display: none;
+	    	float:right;
+	    	opacity: .7;
+	    	height:400px;
+	    	width:400px;
+	    }
+	    .abp{
+	    
+	    	height: 30px;
+	    	background-color:black;
+	    }
+	    .contact_us_text{
+	    	float: left;
+	    	width:300px ;
+	    	height:30px;
+	    	font-size:15px;
+	    }
+	    .list{
+	    	color:#A2A2A2;
+	    	font-weight: initial;
+	    	padding-top: 5px;
+	    	padding-left: 10px;
+	    	padding-right:5px;
+	    	
+	    	text-decoration: none;
+	    }
+	    .list:hover{
+	    	color: white;
+	    }
+	    .help{
+	    	text-align: right;
+	    	float:right;
+	    	width:300px ;
+	    	height:30px;
+	    	font-size:15px;
+	    }
+	    .bottom_line1{
+	    	
+	    	background-color: yellow;
+	    	position: absolute;
+	    	height:6px;
+	    	width:200px;
+	    	bottom: 0px;
+	    	margin-left: 12px;
+	    }
+	    .bottom_line2{
+	    	background-color: yellow;
+	    	position: absolute;
+	    	height:6px;
+	    	width:200px;
+	    	bottom: 0px;
+	    	margin-left: 12px
+	    }
+	    .top_line1{
+	    	
+	    	background-color: yellow;
+	    	position: absolute;
+	    	height:6px;
+	    	width:200px;
+	    	top: 0px;
+	    	margin-left: 12px;
+	    }
+	    .top_line2{
+	    	background-color: yellow;
+	    	position: absolute;
+	    	height:6px;
+	    	width:200px;
+	    	top: 0px;
+	    	margin-left: 12px
+	    }
+	    .sign_up{
+	    	display: none;
+	    	position: absolute;
+	    	background-color: rgba(0,0,0,0.82);
+	    	height:350px;
+	    	width:400px;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-top: -175px;
+	    	margin-left: -200px;
+	    }
+	    .inner_sign_up{
+	  		position: absolute;
+	    	height: 350px;
+	    	width:300px;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-top: -175px;
+	    	margin-left: -150px;
+
+	    }
+	    .sign_in{
+	    	display: none;
+	    	position: absolute;
+	    	background-color: rgba(0,0,0,0.82);
+	    	height:225px;
+	    	width:400px;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-top: -112.5px;
+	    	margin-left: -200px;
+	    }
+	    .inner_sign_in{ 
+	  		position: absolute;
+	    	height: 225px;
+	    	width:300px;
+	    	top: 50%;
+	    	left: 50%;
+	    	margin-top: -112.5px;
+	    	margin-left: -150px;
+	    }
+	    .entry{	
+	    	font-size: 13.7px;
+	    	margin-left: 25px;
+	    	margin-top: 30px;
+	    	height: 28px;
+	    	width:250px;
+	    }
+	</style>
+</head>
+
+<body>
+	<div >
+		<img class="logo" src="logo.png" alt="logo">
+	</div>
+	<div class="back">
+		<div class="text" id="text">
+			<p><i><font color="white" size="7" >Catch The Latest Web Series</font></i></p>	
+			<p><font color="white" size='14'>ABSOLUTELY FREE!</p></font></p><br><br>
+			<button class="button" id="join1">Sign In</button>
+				<span class="s"></span>
+			<button class="button" id="join2">Sign Up</button>
+		</div>
+		<div class="sign_up" id="sign_up">
+			<i class="fas fa-angle-double-left" id="back_button" style="color: #d5d5d5; font-size: 30px; cursor:pointer;"></i>
+			<div class="inner_sign_up">
+			<input class="entry" type="email" name="email" placeholder="E-mail"/><br>
+			<input class="entry" type="text" name="username" placeholder="Username"/><br>	
+			<input class="entry" type="password" name="password" placeholder="Password"/><br>
+			<input class="entry" type="password" name="re-password" placeholder="Re-Enter Password"/><br>
+			<button class="signup_button id="signup_button">Sign Up</button>
+			</div>
+		</div>
+		<div class="sign_in" id="sign_in">
+			<i class="fas fa-angle-double-left" id="back_button2" style="color: #d5d5d5; font-size: 30px ;cursor:pointer;"></i>
+			<div class="inner_sign_in">
+			<input class="entry" type="text" name="username" placeholder="E-mail/Username"/><br>	
+			<input class="entry" type="password" name="password" placeholder="Password"/><br>
+			<a href="dashboard.html"><button class="signup_button id="signin_button">Sign In</button></a>
+			</div>
+		</div>
+	</div>
+	<div class="pre_footer">
+		<div class="box_father">
+			<div class="box" id="box1">
+				<p class="box_text">Anytime, Anywhere on the go!</p>
+				<div class="bottom_line1" id="bottom_line1"></div>
+				<!--div class="top_line1" id="top_line1"></div-->
+			</div>
+			<div class="box" id="box2">
+				<p class="box_text">Get Personalised Content.</p>
+				<div class="bottom_line2" id="bottom_line2"></div>
+				<!--div class="top_line2" id="top_line2"></div-->
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="fc">
+			<div class="footertext" id="footertext1">
+				<p class="ft"><i>Watch On Tablet, Desktop or Mobile Device</i></p>
+			</div>	
+			<div class="footertext2" id="footertext2">
+				<p class="ft"><i>Get recommendations according to your likes or dislikes</i></p>
+			</div>	
+			<div class="footericon" id="footericon1">
+				<img src="devices.png" width="70%" style="padding-top: 100px; padding-left: 90px; float: right;" >
+			</div>
+			<div class="footericon2" id="footericon2">
+				<img src="v.png" width="230px" style="padding-top: 115px; padding-left: 90px; float: right" >
+			</div>
+		</div>
+	</div>
+	<div class="abp">
+		<div class="contact_us_text">
+		<ul>
+			<a href="#" class="list" style="float: left"><li>Contact Us</li></a>
+			<a href="#" class="list" style="float: left"><li>About Us</li></a>
+		</ul>
+		</div>
+		<div class="help">
+		<ul>
+			<a href="#" class="list" style="float: right;"><li>HELP</li></a>
+			<a href="#" class="list" style="float: right;"><li>Give Us Feedback</li></a>
+			<a href="#" class="list" style="float: right;"><li>FAQ</li></a>
+		</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('#box1').css('background','#242424');
+		//$('#bottom_line1').css('opacity','0%');
+		//$('#bottom_line2').css('opacity','0%');
+		$("#bottom_line1").show();
+		$("#bottom_line2").hide();
+		$("#top_line1").hide();
+		$("#top_line2").hide();
+		$('#box1').css('cursor','pointer');
+		$('#box2').css('cursor','pointer');
+		
+		$('#join1').click(function(){
+			$('#sign_in').fadeIn({queue: false, duration: 'slow'});
+			$('#sign_up').hide()
+			$('#text').fadeOut({queue: false, duration: 'slow'});
+			$('#text').animate({ 'left': "-700px" }, 'slow');
+
+		})
+
+		$('#join2').click(function(){
+			$('#text').fadeOut({queue: false, duration: 'slow'});
+			$('#text').animate({ 'left': "-700px" }, 'slow');
+
+			$('#sign_up').fadeIn({queue: false, duration: 'slow'});
+			//$('#sign_up').animate({ '': "5px" }, 'slow');
+			
+			$('#sign_in').hide()
+		})
+
+		$("#back_button").click(function(){
+			//$('#sign_in').hide();
+			//$('#sign_up').fadeIn(3000);
+			$('#sign_up').fadeOut({queue: false, duration: 'slow'});
+			//$('#sign_up').animate({ 'right': "5px" }, 'slow');
+			//$("#text").animate({'right':($('body').innerWidth()-$('#coolDiv').width())}, 'slow');
+			$('#text').fadeIn({queue: false, duration: 'slow'}).css({'position':'absolute','top':'50%','left':'50%','margin-top':'-150px','margin-left':'-350px'});
+			$('#text').animate({ 'left':"675px" }, 'slow');
+
+
+   			//$('#sign_up').fadeOut(3000); 
+   		//	$('#sign_up').animate({left: '250px'},{opacity:1.0});
+    		//$('#sign_up').animate({opacity:0.5}, 1000);
+    		
+			//$('#sign_up').animate({left:'250px'});
+			//$('#text').;
+		})
+
+		$("#back_button2").click(function(){
+			$('#text').fadeIn({queue: false, duration: 'slow'}).css({'position':'absolute','top':'50%','left':'50%','margin-top':'-150px','margin-left':'-350px'});
+			$('#text').animate({ 'left': "675px" }, 'slow');
+			$('#sign_in').fadeOut({queue: false, duration: 'slow'});
+		
+		})
+		$('#box1').click(function(){
+			/*$("#box2").mouseover(function(){
+  			$("#top_line2").show();
+		});
+		$("#box2").mouseout(function(){
+  			$("#top_line2").hide();
+		});*/
+		$('#footertext2').hide();
+		$('#footertext1').show();
+		$('#footericon2').hide();
+		$('#footericon1').show();
+		$('#bottom_line2').hide();
+		$('#bottom_line1').show();
+		$('#box1').css('background','#242424').css('color','#c6c6c6');
+		$('#box2').css('background','#141414').css('color','#a2a2a2');
+
+
+	 })
+		$('#box2').click(function(){
+		/*$("#box1").mouseover(function(){
+			$("#top_line1").show();
+		});
+		$("#box1").mouseout(function(){
+  			$("#top_line1").hide();
+		})*/
+		$("#top_line2").hide();
+		$('#footertext1').hide();
+		$('#footertext2').show();
+		$('#footericon1').hide();
+		$('#footericon2').show();
+		$('#bottom_line2').show();
+		$('#bottom_line1').hide();
+		$('#box2').css('background','#242424').css('color','#c6c6c6');
+		$('#box1').css('background','#141414').css('color','#a2a2a2');
+	 })
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<style type="text/css">
+			.parent{
+				position:relative;
+			}
+			.title{
+				position:absolute;left:5px;
+			}
+			.message{
+
+			}
+
+		</style>
+	<title>Raghav</title>
+</head>
+<body>
+	<div class='parent'>
+		<input type="text" name="username" id="name" value=""/>
+		<span id ='title' class='title'>Email address</span>
+		<span id ='message'></span>
+	</div>
+<script type="text/javascript">
+	$('#title').click(function(){
+		$(this).hide();
+		$('#name').focus();
+	 })
+	$('#name').focus(function(){
+		$('#title').hide();
+		$('#name').css('border','2px solid black')
+	})
+	.blur(function(){
+		if($('#name').val()=="")
+		{
+			$('#name').css('border','1px solid black')
+		}
+		else{
+			var result=$('#name').val().match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/);
+			if(result){
+				$('#message').text('correct email');
+			}
+			else{
+				$('#message').text('incorrect email');	
+			}
+		}
+
+	})
+</script>
+</body>
+</html>
